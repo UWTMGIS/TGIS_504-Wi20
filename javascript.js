@@ -47,11 +47,11 @@ function onLocationFound(e) { //this function does three things if the location 
 
   //L.circle(e.latlng, radius).addTo(map); // this adds a Leaflet circle to the map at the lat and long returned by the locate function. Its radius is set to the var radius defined above.
 
-  if (radius < 100) {
+  if (radius < 10000) {
       L.circle(e.latlng, radius, {color: 'green'}).addTo(map);
   }
   else{
-      L.circle(e.latlng, radius, {color: 'red'}).addTo(map);
+      L.circle(e.latlng, radius, {color: 'blue'}).addTo(map);
   }
   //this adds a Leaflet circle to the map at the lat and long returned by the locate function. Its radius is set to the var radius defined above. If the radius is less than 30, the color of the circle is blue. If it is more than 30, the color is red. Comment out the line of code that adds the simple circle and uncomment the seven lines of code that enable the responsively colored circle. NOTE: there are two syntax errors in the code that you must correct in order for it to function.
   var times = SunCalc.getTimes(new Date(), e.latitude, e.longitude);
