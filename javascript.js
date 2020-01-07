@@ -47,7 +47,7 @@ function onLocationFound(e) { //this function does three things if the location 
 
   //L.circle(e.latlng, radius).addTo(map); // this adds a Leaflet circle to the map at the lat and long returned by the locate function. Its radius is set to the var radius defined above.
 
-  if (radius < 30) {
+  if (radius < 100) {
       L.circle(e.latlng, radius, {color: 'green'}).addTo(map);
   }
   else{
