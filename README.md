@@ -21,7 +21,7 @@ In your index.html file, add the necessary links to Leaflet's CSS and JS librari
   ``` html
   <div id="map"></div>
   ```
-  Define the height of your map container in the CSS file and give the page some additional basic styling:
+  Define the height of your map container in the CSS file and give the page some additional basic styling. Because we want to maximize screen real estate for the map itself, we'll set the height and width to 100%:
   ```css
   body {
     padding: 0;
@@ -30,6 +30,7 @@ In your index.html file, add the necessary links to Leaflet's CSS and JS librari
 
 html, body, #map {
   height: 100%;
+  width: 100vw;
 }
   ```
 Now, initialize the map in the JavaScript file, setting the map to display the whole world. We'll use Mapbox tiles for the basemap. Be sure to replace `{accessToken}` with your own personal Mapbox access token:
@@ -41,4 +42,21 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     maxZoom: 18
 }).addTo(map);
 ```
+### Step 2: Geolocation
+As we've discussed in lecture, we can access a device's location using the [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) that is built into JavaScript. Leaflet makes accessing location even easier with its built-in [`locate` method](https://leafletjs.com/reference-1.6.0.html#map-locate). We can call this method with a single line of code, and when we do so, we can set [various options](https://leafletjs.com/reference-1.6.0.html#locate-options), such as `setView`, which, if true, recenters the map on the user's location, or `watch` which, if true, will continuously watch the device's location instead of detecting it just once. 
+
+At the bottom of your JavaScript code, call the locate method with the following options: 
+```javascript
+map.locate({setView: true, maxZoom: 16});
+```
+Here we set the maxZoom to 16, which preserves some spatial context even if a user's device gives location information that is precise enough that the setView option could zoom in further. Save your work and test the page. If everything is working as expected, the map should recenter and zoom to your location. Note that you need to give the webpage permission to access your location information before the map can access it. 
+#### A quick aside 
+You may notice that the text on your map is very difficult to read when zoomed in. This has something to do with retina screen detection errors and tile size (see more in a Stack Overflow thread [here](https://stackoverflow.com/questions/37040494/street-labels-in-mapbox-tile-layer-too-small)). If this happens for you, add the following options to your tile layer where you call it with the L.tileLayer method, below where you specify attribution, maxZoom, and id:
+```javascript
+    tileSize: tileSize: 512,
+    zoomOffset: -1,
+```
+
+
+
 
