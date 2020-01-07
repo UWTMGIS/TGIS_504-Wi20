@@ -53,10 +53,12 @@ Here we set the maxZoom to 16, which preserves some spatial context even if a us
 #### A quick aside 
 You may notice that the text on your map is very difficult to read when zoomed in. This has something to do with retina screen detection errors and tile size (see more in a Stack Overflow thread [here](https://stackoverflow.com/questions/37040494/street-labels-in-mapbox-tile-layer-too-small)). If this happens for you, add the following options to your tile layer where you call it with the L.tileLayer method, below where you specify attribution, maxZoom, and id:
 ```javascript
-    tileSize: tileSize: 512,
+    tileSize: 512,
     zoomOffset: -1,
 ```
+### Now back to Geolocation
 
+What if we want to do more than recenter and zoom the map after we've located the user's device? No sweat! Built into the `locate` method are two events that can fire after the method runs, `locationfound` and `locationerror`. We can write functions that will run if the location is found or if there is an error when the `locate` method tries to find the location (for instance, if the user doesn't give permission for the webpage to access their location).
 
-
+Let's say we want to add a marker at the user's location if geolocation is successful and show an error message if geolocation fails. We can do so by writing functions and adding event listeners to our code. Note that the event listeners need to be included *before* the `map.locate` call!
 
