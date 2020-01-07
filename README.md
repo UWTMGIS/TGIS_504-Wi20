@@ -7,7 +7,7 @@ This lab is based on the tutorial [Leaflet on Mobile](https://leafletjs.com/exam
 ### Set up your workspace
 Begin by downloading the zipped folder of lab templates. This should contain an index.html, javascript.js, and styles.css file. Extract the files and save them to your workspace, making sure to set up an appropriate folder structure for the new term's work. Open the files in Atom or the text editor of your choice. Eventually, you will upload the files to GitHub or your UW server space, so you may wish to create a repository for your files now, which also provides the benefit of serving as a backup for your work. As always, I recommend saving your work frequently and testing it regularly using atom-live-server or a similar Atom package. We will not be using any geojson files in this lab, so you won't have cross-origin issues and local testing will therefore also be possible.
 
-### Step 1: Set up the page and initialize the map
+### Step 1: Prepare the page and initialize the map
 In your index.html file, add the necessary links to Leaflet's CSS and JS libraries to the `head`. I recommend using a CDN rather than locally hosting the libraries: 
  ``` html
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -17,8 +17,21 @@ In your index.html file, add the necessary links to Leaflet's CSS and JS librari
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
   ```
- In the `body` of the index, create a `div` element to hold the map. 
+ In the `body` of the index, create a `div` element to hold the map: 
   ``` html
   <div id="map"></div>
   ```
-  
+  Define the height of your map container in the CSS file:
+  ```
+  #mapid { height: 100%; }
+  ```
+Now, initialize the map in the JavaScript file, setting the map to display the whole world. We'll use Mapbox tiles for the basemap. Be sure to replace `{accessToken}` with your own personal Mapbox access token:
+```javascript
+var map = L.map('map').fitWorld();
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18
+}).addTo(map);
+```
+
