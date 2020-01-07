@@ -21,9 +21,16 @@ In your index.html file, add the necessary links to Leaflet's CSS and JS librari
   ``` html
   <div id="map"></div>
   ```
-  Define the height of your map container in the CSS file:
-  ```
-  #mapid { height: 100%; }
+  Define the height of your map container in the CSS file and give the page some additional basic styling:
+  ```css
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+html, body, #map {
+  height: 100%;
+}
   ```
 Now, initialize the map in the JavaScript file, setting the map to display the whole world. We'll use Mapbox tiles for the basemap. Be sure to replace `{accessToken}` with your own personal Mapbox access token:
 ```javascript
