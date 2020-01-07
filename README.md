@@ -8,7 +8,7 @@ This lab is based on the tutorial [Leaflet on Mobile](https://leafletjs.com/exam
 Begin by downloading the zipped folder of lab templates. This should contain an index.html, javascript.js, and styles.css file. Extract the files and save them to your workspace, making sure to set up an appropriate folder structure for the new term's work. Open the files in Atom or the text editor of your choice. Eventually, you will upload the files to GitHub or your UW server space, so you may wish to create a repository for your files now, which also provides the benefit of serving as a backup for your work. As always, I recommend saving your work frequently and testing it regularly using atom-live-server or a similar Atom package. We will not be using any geojson files in this lab, so you won't have cross-origin issues and local testing will therefore also be possible.
 
 ### Step 1: Prepare the page and initialize the map
-In your index.html file, add the necessary links to Leaflet's CSS and JS libraries to the `head`. I recommend using a CDN rather than locally hosting the libraries: 
+In your index.html file, add the necessary links to Leaflet's CSS and JS libraries to the `head`. Per our discussion of the relative merits of CDNs versus locally hosted libraries last quarter, I recommend using a CDN in order to minimize bandwidth usage for best mobile performance: 
  ``` html
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -21,7 +21,7 @@ In your index.html file, add the necessary links to Leaflet's CSS and JS librari
   ``` html
   <div id="map"></div>
   ```
-  Define the height of your map container in the CSS file and give the page some additional basic styling. Because we want to maximize screen real estate for the map itself, we'll set the height and width to 100%:
+  Define the height and width of your map container in the CSS file and give the page some additional basic styling. Because we want to maximize screen real estate for the map itself, we'll set the height and width to 100%:
   ```css
   body {
     padding: 0;
@@ -33,7 +33,7 @@ html, body, #map {
   width: 100vw;
 }
   ```
-Now, initialize the map in the JavaScript file, setting the map to display the whole world. We'll use Mapbox tiles for the basemap. Be sure to replace `{accessToken}` with your own personal Mapbox access token:
+Initialize the map in the JavaScript file, setting the map to display the whole world. We'll use Mapbox tiles for the basemap. Be sure to replace `{accessToken}` with your own personal Mapbox access token:
 ```javascript
 var map = L.map('map').fitWorld();
 
@@ -89,5 +89,3 @@ At this point, you've basically completed the Leaflet on Mobile tutorial and you
 
 ### Step 3: Giving the user feedback about the geolocation accuracy of their device
 You've made some good progress on the lab. Well done. You've been doing your development and testing on a laptop or desktop computer; now, take a moment to test out your work on your mobile device. Upload your HTML, JS, and CSS files as a repository to GitHub and enable Pages for the repository (or, if you prefer, transfer your files to your UW server space using SFTP). After your files have upload, visit the URL where they are hosted test things out, comparing what displays to what you see on your computer. In all likelihood, the radius of the circle you get with your mobile device is much smaller than the radius of the circle you get with your computer. This is because your mobile device has GPS, which provides much greater locational accuracy than the IP address the webpage accesses to geolocate your computer. The size of the circle is one form of **feedback** that our web map gives the user to understand the accuracy of their geolocation. But let's add a second form of feedback to make this even more clear to the user. We'll use conditional styling to change the color of the circle if the accuracy is above a certain level of accuracy--green if its accurate within 100 meters and red if its less accurate than that. 
-
-
