@@ -56,7 +56,7 @@ You may notice that the text on your map is very difficult to read when zoomed i
     tileSize: 512,
     zoomOffset: -1,
 ```
-### Now back to Geolocation
+#### Now back to Geolocation
 
 What if we want to do more than recenter and zoom the map after we've located the user's device? No sweat! Built into the `locate` method are two events that can fire after the method runs, `locationfound` and `locationerror`. We can write functions that will run if the location is found or if there is an error when the `locate` method tries to find the location (for instance, if the user doesn't give permission for the webpage to access their location).
 
@@ -79,6 +79,14 @@ Next, we'll write a function that will run if the `locationerror` event fires.
 function onLocationError(e) {
   alert(e.message);
 }
+
+	map.on('locationerror', onLocationError);
+
 ```
-The message that displays will depend on the error; you can also find these errors in the JavaScript console in your web browser. 
+The message that displays will depend on the error; you can also find these errors in the JavaScript console in your web browser. I like to organize my code so that my functions are together and my event listeners are together right before the `map.locate` code, but you may organize things how you prefer. 
+
+At this point, you've basically completed the Leaflet on Mobile tutorial and your map should look something like their [complete example](https://leafletjs.com/examples/mobile/example.html) but with some custom improvements. 
+
+### Step 3: Giving the user feedback about the geolocation of their device
+
 
