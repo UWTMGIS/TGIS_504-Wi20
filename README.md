@@ -174,7 +174,7 @@ But none of this will actually work if we don't also include a link to the SunCa
 
 From the [SunCalc Github page](https://github.com/mourner/suncalc), click the green 'Clone or download' button and download the ZIP. Extract just the `suncalc.js` file and save it in the same folder where the rest of your lab files are stored. Link to this file using a `<script>` tag in the `head` of your index.html file and test it again. Et voila!
 
-### Step 5: Finishing touches and write-up questions
+### Step 5: Finishing touches
 
 To complete your map, please do the following: 
 1. Create an alert window that displays on load or add explanatory text at the top of your webpage to explain that your page will ask the user for their location information. Tell them why it will do this and that you will not store or share their location information.
