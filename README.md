@@ -174,11 +174,19 @@ But none of this will actually work if we don't also include a link to the SunCa
 
 From the [SunCalc Github page](https://github.com/mourner/suncalc), click the green 'Clone or download' button and download the ZIP. Extract just the `suncalc.js` file and save it in the same folder where the rest of your lab files are stored. Link to this file using a `<script>` tag in the `head` of your index.html file and test it again. Et voila!
 
-### Step 5: Finishing touches
+### Step 5: Finishing touches and write-up questions
 
 To complete your map, please do the following: 
 1. Create an alert window that displays on load or add explanatory text at the top of your webpage to explain that your page will ask the user for their location information. Tell them why it will do this and that you will not store or share their location information.
 2. Add a layer control that allows the user to manually switch between light and dark basemaps, in case the automatically selected basemap isn't to their liking. You can do this without any additional Leaflet plugins. See [this tutorial](https://leafletjs.com/examples/layers-control/) for further help. 
 3. BONUS: Set up the map.locate method to run at the click of a button rather than on page load. The [L.EasyButton plugin](https://github.com/CliffCloud/Leaflet.EasyButton) is an excellent way to do this. 
 
-As always, reach out to me and one another for assistance as needed! 
+As always, reach out to me and one another for assistance as needed. 
+
+### Submission
+Submit a link to your final work on Canvas along with brief answers to the following questions: 
+1. Regarding Leaflet's map.locate method (documentation [here](https://leafletjs.com/reference-1.6.0.html#locate-options), if we don't specify any options when we call the method, will the map recenter if geolocation is found? (Hint: what is the default parameter for the setView option?)
+2. Answers to the following questions about the Geolocation API documentation (https://www.w3.org/TR/geolocation-API/): 
+   a.	What is the confidence level on the accuracy value returned by the API?
+   b.	In this lab, we haven't access data on the heading (or direction of travel) of the device, but using the Geolocation API, we could. If the Geolocation API returned a heading reading of 135, what direction would the device be facing?
+3. Once you've uploaded your final map to GitHub Pages or your UW server space, test the map on two different browsers on your computer and two different browsers on your mobile device. List the browsers you ran your test with and briefly describe the differences in user experience among the various options. Did you run into any bugs while testing? If so, explain. 
