@@ -169,3 +169,10 @@ Since `getTimes` returns a lot more information than we need, we pull out just t
 Next, we get the current time by again using the `new Date` constructor and specifying that we want just the current hour of the current date and time with `getHours()`. Finally, using an in/then conditional statement, we remove and add baselayers based on whether the current hour falls between sunrise and sunset. 
 
 Easy right? :) 
+
+But none of this will actually work if we don't also include a link to the SunCalc library in our index. If you've made the changes specified above and test your map, you won't see any changes, even if it's after sunset. If you open Developer Tools and view the JavaScript console, you'll see the following error: `Uncaught ReferenceError: SunCalc is not defined`. As far as I know, SunCalc is not available on a Content Delivery Network, so we'll have to download the library from GitHub and host it locally. 
+
+From the [SunCalc Github page](https://github.com/mourner/suncalc), click the green 'Clone or download' button and download the ZIP. Extract just the `suncalc.js` file and save it in the same folder where the rest of your lab files are stored. Link to this file using a `<script>` tag in the `head` of your index.html file and test it again. Et voila!
+
+### Step 6: Finishing touches
+
