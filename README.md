@@ -100,7 +100,7 @@ if (radius <= 100) {
       L.circle(e.latlng, radius, {color: 'red'}).addTo(mymap);
   }
   ```
-  Here we add styling the circle instead of using the blue color that is the default in Leaflet. The style is set based on a conditional operator: **if** the circle's radius (which is determined by the accuracy reading returned by the locate method) is less than or equal to 100, the circle will be green. **Else** if the radius is greater than 100, the circle will be red. *Before you test this change out, note that I've included two small errors in the code block above that you need to correct before the code will function correctly!
+  Here we add styling the circle instead of using the blue color that is the default in Leaflet. The style is set based on a conditional operator: **if** the circle's radius (which is determined by the accuracy reading returned by the locate method) is less than or equal to 100, the circle will be green. **Else** if the radius is greater than 100, the circle will be red. ****Beware***Before you test this change out, note that I've included two small errors in the code block above that you need to correct before the code will function. Just trying to keep you on your toes! 
   
 ### Step 4: Changing the basemap based on environmental conditions
 
