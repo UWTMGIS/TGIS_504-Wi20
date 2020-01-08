@@ -132,3 +132,11 @@ Next, we need to initialize the map with one of the two tile layers. Let's choos
 var map = L.map('map', {layers:[light]}).fitWorld();
 ```
 Then, move that line **below** the sections of code that add the two tile layers. Your map should load with the Mapbox Light style instead of the Streets style now. 
+
+But how do we get the basemap to change based on today's sunset and sunrise times in the user's location? Let's break this task down into component steps: 
+1. figure out what time the sun rises and sets in the user's location on the current date 
+2. figure out what the user's current location is and what the current date is 
+3. figure out what the current time is and determine if the sun is currently up or if it is set
+4. style the basemap conditionally based on the sun's position
+
+Believe it or not, this is pretty easy to do with JavaScript. To make it even easier, we're going to use a library called SunCalc that was developed by the same person who developed Leaflet, Vladimir Agafonkin. 
