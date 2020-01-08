@@ -39,7 +39,8 @@ var map = L.map('map').fitWorld();
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18
+    maxZoom: 18, 
+    id: 'mapbox/streets-v10',
 }).addTo(map);
 ```
 ### Step 2: Geolocation
@@ -103,4 +104,31 @@ if (radius <= 100) {
   
 ### Step 4: Changing the basemap based on environmental conditions
 
-As this week's readings noted, an important constraint of mobile mapping is that environmental conditions can impact useability; thus, we tend to prefer high contrast color schemes to improve readability of maps in bright light, since many people use mobile maps outdoors and not just at climate controlled desktop computers. 
+As this week's readings noted, a significant constraint of mobile mapping is that environmental conditions can impact useability; thus, for instance, we tend to prefer high contrast color schemes to improve readability of maps in bright light, since many people use mobile maps outdoors and not just at climate controlled desktop computers. In the final step of creating a map that is optimized for mobile use, we're going to add functionality that switches between a light and dark themed base map, depending on the user's environmental condtions. If it's during daylight hours in the time and place that your user is viewing your map, the basemap will be Mapbox's light map, and if it's not during daylight hours, the basemap will be Mapbox's dark map. 
+
+First, we need to load tile layers for both the light and dark Mapbox styles. At the top of your JavaScript code, replace the lines where you add the `L.tileLayer` with the `id:'mapbox/streets-v10',` with the following code: 
+```javascript
+var light = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWpzbGFnZXIiLCJhIjoiZUMtVjV1ZyJ9.2uJjlUi0OttNighmI-8ZlQ', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id:'mapbox/light-v10',
+    tileSize: 512,
+    zoomOffset: -1,
+});
+
+var dark = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZWpzbGFnZXIiLCJhIjoiZUMtVjV1ZyJ9.2uJjlUi0OttNighmI-8ZlQ', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id:'mapbox/dark-v10',
+    tileSize: 512,
+    zoomOffset: -1,
+});
+```
+We are replacing the single tile layer that used the Mapbox Streets style with two tile layers, one that uses the light style and one that uses the dark style. Note also that we have made each tile layer into a variable, which we have given the names `light` and `dark`, and that we have removed the method `addTo(map)` from the end of each section of code. 
+
+Next, we need to initialize the map with one of the two tile layers. Let's choose light. Change the first line of the JavaScript code, where you initialize the map object, so that it reads as follows: 
+
+```javascript
+var map = L.map('map', {layers:[light]}).fitWorld();
+```
+Then, move that line **below** the sections of code that add the two tile layers. Your map should load with the Mapbox Light style instead of the Streets style now. 
