@@ -185,7 +185,7 @@ As always, reach out to me and one another for assistance as needed.
 
 ### Submission
 Submit a link to your final work on Canvas along with brief answers to the following questions: 
-1. Regarding Leaflet's map.locate method (documentation [here](https://leafletjs.com/reference-1.6.0.html#locate-options), if we don't specify any options when we call the method, will the map recenter if geolocation is found? (Hint: what is the default parameter for the setView option?)
+1. Regarding Leaflet's map.locate method (documentation [here](https://leafletjs.com/reference-1.6.0.html#locate-options)), if we don't specify any options when we call the method, will the map recenter if geolocation is found? (Hint: what is the default parameter for the setView option?)
 2. Answers to the following questions about the Geolocation API documentation (https://www.w3.org/TR/geolocation-API/): 
    a.	What is the confidence level on the accuracy value returned by the API?
    b.	In this lab, we haven't access data on the heading (or direction of travel) of the device, but using the Geolocation API, we could. If the Geolocation API returned a heading reading of 135, what direction would the device be facing?
