@@ -89,3 +89,18 @@ At this point, you've basically completed the Leaflet on Mobile tutorial and you
 
 ### Step 3: Giving the user feedback about the geolocation accuracy of their device
 You've made some good progress on the lab. Well done. You've been doing your development and testing on a laptop or desktop computer; now, take a moment to test out your work on your mobile device. Upload your HTML, JS, and CSS files as a repository to GitHub and enable Pages for the repository (or, if you prefer, transfer your files to your UW server space using SFTP). After your files have upload, visit the URL where they are hosted test things out, comparing what displays to what you see on your computer. In all likelihood, the radius of the circle you get with your mobile device is much smaller than the radius of the circle you get with your computer. This is because your mobile device has GPS, which provides much greater locational accuracy than the IP address the webpage accesses to geolocate your computer. The size of the circle is one form of **feedback** that our web map gives the user to understand the accuracy of their geolocation. But let's add a second form of feedback to make this even more clear to the user. We'll use conditional styling to change the color of the circle if the accuracy is above a certain level of accuracy--green if its accurate within 100 meters and red if its less accurate than that. 
+
+In the function `onLocationFound` replace the line of code that reads `L.circle(e.latlng, radius).addTo(map);` with the following: 
+```javascript
+if (radius <= 100) {
+      L.circle(e.latlng, radius, [color: 'green'}).addTo(map);
+  }
+  else{
+      L.circle(e.latlng, radius, {color: 'red'}).addTo(mymap);
+  }
+  ```
+  Here we add styling the circle instead of using the blue color that is the default in Leaflet. The style is set based on a conditional operator: **if** the circle's radius (which is determined by the accuracy reading returned by the locate method) is less than or equal to 100, the circle will be green. **Else** if the radius is greater than 100, the circle will be red. *Before you test this change out, note that I've included two small errors in the code block above that you need to correct before the code will function correctly!
+  
+### Step 4: Changing the basemap based on environmental conditions
+
+As this week's readings noted, an important constraint of mobile mapping is that environmental conditions can impact useability; thus, we tend to prefer high contrast color schemes to improve readability of maps in bright light, since many people use mobile maps outdoors and not just at climate controlled desktop computers. 
