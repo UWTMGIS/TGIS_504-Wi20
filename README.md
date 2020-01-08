@@ -134,9 +134,38 @@ var map = L.map('map', {layers:[light]}).fitWorld();
 Then, move that line **below** the sections of code that add the two tile layers. Your map should load with the Mapbox Light style instead of the Streets style now. 
 
 But how do we get the basemap to change based on today's sunset and sunrise times in the user's location? Let's break this task down into component steps: 
-1. figure out what time the sun rises and sets in the user's location on the current date 
-2. figure out what the user's current location is and what the current date is 
+1. figure out what the user's current location is and what the current date is 
+2. figure out what time the sun rises and sets in the user's location on the current date 
 3. figure out what the current time is and determine if the sun is currently up or if it is set
 4. style the basemap conditionally based on the sun's position
 
 Believe it or not, this is pretty easy to do with JavaScript. To make it even easier, we're going to use a library called SunCalc that was developed by the same person who developed Leaflet, Vladimir Agafonkin. 
+
+Check out the [documentation for SunCalc](https://github.com/mourner/suncalc) and view a live example [here](http://suncalc.net/). In the Reference section, you'll see that if we use SunCalc's method `getTimes` and provide option parameters for the `date`, `latitude`, and `longitude`, the method will return information on sunrise time and sunset time, among other pieces of information. But how do we provide the parameters for date, lat, and lon based on the user's geolocation and the current date? 
+
+The date is the easiest to get, since JavaScript can provide this for us. We can simply create a Date object with `new Date()`. For more on this, see [this documentation](https://www.w3schools.com/jsref/jsref_obj_date.asp). The latitude and longitude are also fairly easy to get, since they are returned when Leaflet's `map.locate` method runs. 
+
+Inside the `onLocationFound` function in your JavaScript code, after the if/else statement that sets the color's circle but before the `}` that ends the function, add the following code: 
+```javascript
+var times = SunCalc.getTimes(new Date(), e.latitude, e.longitude);
+var sunrise = times.sunrise.getHours();
+var sunset = times.sunset.getHours();
+
+
+var currentTime = new Date().getHours();
+    if (sunrise < currentTime && currentTime < sunset){
+      map.removeLayer(dark);
+      map.addLayer(light);
+    }
+    else {
+      map.removeLayer(light);
+      map.addLayer(dark);
+    }
+  ```
+The first line of code (`var times`...) is using the SunCalc library to return all of the information about sunrise, sunset, dusk, dawn, solar noon, etc. for the date, latitude, and longitude parameters that are specified. We specify that the date parameter should be the current date by using JavaScripts `new Date()` constructor; we specify that latitude and longitude are the lat and lon returned by `map.locate` with `e.latitude` and `e.longitude` by placing this code inside the `onLocationFound(e)` function we wrote previously in Step 2. 
+
+Since `getTimes` returns a lot more information than we need, we pull out just the time of sunrise and sunset and declare them as variables in the next two lines of code. We use .getHours() to specify that we only want the hour of sunset and sunrise, not the full Hours, Minutes, and Seconds that SunCalc provides. 
+
+Next, we get the current time by again using the `new Date` constructor and specifying that we want just the current hour of the current date and time with `getHours()`. Finally, using an in/then conditional statement, we remove and add baselayers based on whether the current hour falls between sunrise and sunset. 
+
+Easy right? :) 
