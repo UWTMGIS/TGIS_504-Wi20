@@ -174,5 +174,11 @@ But none of this will actually work if we don't also include a link to the SunCa
 
 From the [SunCalc Github page](https://github.com/mourner/suncalc), click the green 'Clone or download' button and download the ZIP. Extract just the `suncalc.js` file and save it in the same folder where the rest of your lab files are stored. Link to this file using a `<script>` tag in the `head` of your index.html file and test it again. Et voila!
 
-### Step 6: Finishing touches
+### Step 5: Finishing touches
 
+To complete your map, please do the following: 
+1. Create an alert window that displays on load or add explanatory text at the top of your webpage to explain that your page will ask the user for their location information. Tell them why it will do this and that you will not store or share their location information.
+2. Add a layer control that allows the user to manually switch between light and dark basemaps, in case the automatically selected basemap isn't to their liking. You can do this without any additional Leaflet plugins. See [this tutorial](https://leafletjs.com/examples/layers-control/) for further help. 
+3. BONUS: Set up the map.locate method to run at the click of a button rather than on page load. The [L.EasyButton plugin](https://github.com/CliffCloud/Leaflet.EasyButton) is an excellent way to do this. 
+
+As always, reach out to me and one another for assistance as needed! 
