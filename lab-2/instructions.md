@@ -58,11 +58,13 @@ var map = L.map('map').setView([47.25, -122.44], 11);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
-    id: 'mapbox/streets-v11',
+    id: 'mapbox/light-v10',
     accessToken: 'yourAccessTokenGoesHere',
 }).addTo(map);
 ```
-You should now have an HTML page that loads a Leaflet map centered on the South Sound. Next let's add links to the CSS and JS files we need in order to initialize the routing plugin. In the 'Getting Started' section of the [Leaflet Routing Machine homepage](http://www.liedman.net/leaflet-routing-machine), you can find links to where the necessary CSS and JS files are accessible via unpkg.com. Copy those links into the `<head>` of your index. 
+You should now have an HTML page that loads a Leaflet map centered on the South Sound. The code you copied above uses the Mapbox light style for its basemap. However, this style doesn't have the best contrast, making it somewhat difficult to use in bright light environments. Change the basemap to another style--either a custom style or another basemap option made available by Mapbox or another tile service--that has high contrast and emphasizes roads over terrain or other features. 
+
+Next let's add links to the CSS and JS files we need in order to initialize the routing plugin. In the 'Getting Started' section of the [Leaflet Routing Machine homepage](http://www.liedman.net/leaflet-routing-machine), you can find links to where the necessary CSS and JS files are accessible via unpkg.com. Copy those links into the `<head>` of your index. 
 
 Then, under the section of code that intiliazes your map in your scripts.js file, add the following code to initialize the routing plugin:
 ```javascript
