@@ -189,7 +189,9 @@ Though Leaflet Routing Machine is a fairly good plugin, one major disadvantage i
 I won’t ask you to rebuild this CSS file to make it mobile-friendly, but thinking back to the unit on responsive design and design conventions for mobile maps, please write a paragraph in your lab-write up that includes five specific suggestions for how you would modify the CSS to make Leaflet Routing Machine mobile-friendly. 
 
 ### Deliverables
-**Part 1**: Answer the following questions about three different routing plugins that can work with Leaflet.
+**Part 1**: 
+
+Answer the following questions about three different routing plugins that can work with Leaflet.
 1.	Title and maintainer of the plugin: 
 2.	What are the main functionalities of the plugin? 
 3.	When was the last commit pushed to the GitHub repo where the plugin can be downloaded? 
@@ -201,5 +203,6 @@ I won’t ask you to rebuild this CSS file to make it mobile-friendly, but think
 * Explain how you modified your map to improve the discoverability of the waypoint creating affordance.
 
 **Part 3**: 
+
 Drawing on the unit on responsive design and design conventions for mobile maps (Week 2), write a paragraph that includes five specific suggestions for how you would modify the CSS to make Leaflet Routing Machine mobile-friendly.
 
