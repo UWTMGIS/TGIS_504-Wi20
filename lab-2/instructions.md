@@ -1,7 +1,7 @@
 # Lab 2: Routing with Leaflet and the Mapbox Directions API
 ## TGIS 504, Winter 2020, Dr. Emma Slager
 ### Introduction
-In this lab, you'll hone your technical skills by building a routing application. You'll also practice the more qualitative skills of evaluation and critique by assessing different Leaflet plugin options and evaluating the mobile friendliness of a particular API. This lab uses the Leaflet mapping platform with additional functionality that is built on the Mapbox Directions API and Mapbox Geocoding API. All the files you need for this lab you will either create or download from the Internet. A list of deliverables is included at the end of these instructions.
+In this lab, you'll hone your technical skills by building a routing application. You'll also practice the more qualitative skills of evaluation and critique by assessing different Leaflet plugin options and evaluating the mobile friendliness of a particular API. This lab uses the Leaflet mapping platform and a routing plugin, with additional functionality that is built on the Mapbox Directions API and Mapbox Geocoding API. All the files you need for this lab you will either create or download from the Internet. A list of deliverables is included at the end of these instructions.
 
 ### Part 1: Working with and assesssing plugins
 As you know from previous coursework, the core set of Leaflet features is designed to be as lightweight as possible, and additional features are provided through plugins. The majority of these plugins are built not by Leaflet staff but by community members. This modularity and customizability is typical of open-source software and has many advantages, but it also means quality can vary from plugin to plugin, so being able to assess them is important. 
@@ -48,7 +48,7 @@ body {
    height: 100%;
 }
 ```
-In your index.html <head>, include a link to your styles.css file, and in the <body>, after you've created the map div, include a link to your scripts.js file. 
+In your index.html `<head>`, include a link to your styles.css file, and in the `<body>`, after you've created the map div, include a link to your scripts.js file. 
   
 Next, initialize the map. Add the following code to your scripts.js file:
 ```javascript
@@ -61,3 +61,4 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_
     accessToken: 'yourAccessTokenGoesHere',
 }).addTo(map);
 ```
+You should now have an HTML page that loads a Leaflet map centered on the South Sound. 
