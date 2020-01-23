@@ -71,10 +71,19 @@ Then, under the section of code that intiliazes your map in your scripts.js file
               L.latLng(47.246587, -122.438830),
               L.latLng(47.318017, -122.542970)
           ],
+           routeWhileDragging: true
       }).addTo(map);
 ```
-Save your work and preview in a browser. You should see a map with markers at either end of a route and directions from Pinkerton Hall to Point Defiance. Try adding a third point at latitude and longitude 47.258024,  -122.444725. Aha, now you can get baked goods at Corina Bakery on the way to the park.
+This code initializes the routing control and adds it to the map. The waypoints option defines the start and stop points, while the routeWhileDragging: true option allows you to change the markers at the start and stop points by dragging them. Save your work and preview in a browser. You should see a map with markers at either end of a route and directions from Pinkerton Hall to Point Defiance. Try adding a third point at latitude and longitude 47.258024,  -122.444725. Aha, now you can get baked goods at Corina Bakery on the way to the park.
 #### Step 3: Modifying options for the routing control
 
 If you aren’t testing in Google Chrome, switch browsers now and open up the console in Google Developer Tools. You should see the warning below:
+
+![console message](console-message.png)
+
+By default, Leaflet Routing Machine uses routing software from the Open Source Routing Machine (OSRM, website: http://project-osrm.org/). They provide a demo server for testing with their product, but it often gets overloaded by calls from everyone in the world running tests with it (you may have already run into an HTTP 429 error telling you the server had too much traffic while testing). If you want to use OSRM in production you need to build and host your own server. This is a more complicated process than we can cover in one lab, so instead, we’ll change our routing service from OSRM to the Mapbox Directions API. As an option when you initialize the routing control, add the following line of code: 
+```javascript
+router: L.Routing.mapbox('your-access-token-here'),
+```
+Insert your access token where requested, save, and open in Chrome. View the console in Developer Tools and you should no longer see the OSRM warning. Mapbox Directions API limits your free usage to 50,000 geolocation requests per month. The limit is more than sufficient for our purposes, but if you were to use this in a commercial product, you might exceed this and either pay for more usage or use a different routing service. 
 
