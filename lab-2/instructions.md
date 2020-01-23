@@ -173,13 +173,14 @@ Based on what you’ve learned in last lab and this lab, add functionality that 
 
 #### Step 7: host your map online
 Your final output for this part of the lab should be a Leaflet map with the following features/functionalities:
--Draggable markers
--Units in miles
--collapsable control that is hidden on initial map load
--Geocoder to enable searching for locations
--Clickable buttons to create waypoints 
--Some modification that makes clickable functionality more discoverable
--The ability to use current location as a waypoint
+* Draggable markers
+* Units in miles
+* collapsable control that is hidden on initial map load
+* Geocoder to enable searching for locations
+* Clickable buttons to create waypoints 
+* Some modification that makes clickable functionality more discoverable
+* The ability to use current location as a waypoint
+
 Please host your map on GitHub Pages or your UW server space and include a link to its location in your lab write-up. 
 
 ### Part 3: Evaluating and critiquing mobile friendliness
@@ -208,8 +209,8 @@ I won’t ask you to rebuild this CSS file to make it mobile-friendly, but think
 5.	Based on the above information, how would you rank this in relation to the other two plugins you chose in terms of overall quality and usability? Justify your ranking
 
 **Part 2**: 
--Include a link to the URL of the map you built in Part 2
--Explain how you modified your map to improve the discoverability of the waypoint creating affordance.
+* Include a link to the URL of the map you built in Part 2
+* Explain how you modified your map to improve the discoverability of the waypoint creating affordance.
 
 **Part 3**: 
 Drawing on the unit on responsive design and design conventions for mobile maps (Week 2), write a paragraph that includes five specific suggestions for how you would modify the CSS to make Leaflet Routing Machine mobile-friendly.
