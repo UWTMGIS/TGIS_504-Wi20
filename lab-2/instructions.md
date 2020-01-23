@@ -190,23 +190,11 @@ I won’t ask you to rebuild this CSS file to make it mobile-friendly, but think
 
 ### Deliverables
 **Part 1**: Answer the following questions about three different routing plugins that can work with Leaflet.
-1.	Title and maintainer of plugin 1: 
+1.	Title and maintainer of the plugin: 
 2.	What are the main functionalities of the plugin? 
 3.	When was the last commit pushed to the GitHub repo where the plugin can be downloaded? 
 4.	Do the developers provide a working demo of the plugin?
 5.	Based on the above information, how would you rank this in relation to the other two plugins you chose in terms of overall quality and usability? Justify your ranking. 
-
-1.	Title and maintainer of plugin 2: 
-2.	What are the main functionalities of the plugin? 
-3.	When was the last commit pushed to the GitHub repo where the plugin can be downloaded? 
-4.	Do the developers provide a working demo of the plugin?
-5.	Based on the above information, how would you rank this in relation to the other two plugins you chose in terms of overall quality and usability? Justify your ranking
-
-1.	Title and maintainer of plugin 3: 
-2.	What are the main functionalities of the plugin? 
-3.	When was the last commit pushed to the GitHub repo where the plugin can be downloaded? 
-4.	Do the developers provide a working demo of the plugin?
-5.	Based on the above information, how would you rank this in relation to the other two plugins you chose in terms of overall quality and usability? Justify your ranking
 
 **Part 2**: 
 * Include a link to the URL of the map you built in Part 2
