@@ -18,6 +18,7 @@ Now that you’re a little more familiar with the routing plugins available for 
 #### Step 1: Choose a routing plugin and set up your workspace
 For basic routing functionality, I like Leaflet Routing Machine. Its latest version was released in November 2018, and the latest commit was made to its GitHub repository earlier this month. The documentation is more developed than many plugins, and there are working demos and even tutorials available. Let’s go with this one. As with most Leaflet libraries and plugins, we can download the necessary files (a CSS file and a JS file) for using Leaflet Routing Machine and host them ourselves, or we can find them on unpkg.com. We'll use the CDN unpkg.com version instead of downloading. 
 
+#### Step 2: Set up a minimal Leaflet map and initialize the routing plugin
 In a text editor like Atom, let's create our files: index.html, styles.css, and scripts.js. Save these in a new folder. As always, consider uploading your folder as a repository to GitHub now, or you can save this step until later when you're ready to put your work up on GitHub Pages. 
 
 Edit your index.html file to include basic header information, CDN links to the Leaflet CSS and JS files, and a div for holding your map: 
@@ -73,3 +74,5 @@ Then, under the section of code that intiliazes your map in your scripts.js file
       }).addTo(map);
 ```
 Save your work and preview in a browser. You should see a map with markers at either end of a route and directions from Pinkerton Hall to Point Defiance. Try adding a third point at latitude and longitude 47.258024,  -122.444725. Aha, now you can get baked goods at Corina Bakery on the way to the park.
+#### Step 3: Modifying options for the routing control
+
