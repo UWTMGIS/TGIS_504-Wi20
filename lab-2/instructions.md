@@ -76,3 +76,5 @@ Then, under the section of code that intiliazes your map in your scripts.js file
 Save your work and preview in a browser. You should see a map with markers at either end of a route and directions from Pinkerton Hall to Point Defiance. Try adding a third point at latitude and longitude 47.258024,  -122.444725. Aha, now you can get baked goods at Corina Bakery on the way to the park.
 #### Step 3: Modifying options for the routing control
 
+If you aren’t testing in Google Chrome, switch browsers now and open up the console in Google Developer Tools. You should see the warning below:
+
