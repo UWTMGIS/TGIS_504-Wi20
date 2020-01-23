@@ -100,7 +100,24 @@ collapsible: true,
 ```
 Now, review the documentation to figure out how you can set the control to be collapsed (not showing) when the map first loads and edit your code to achieve this. Hint: this is a boolean option available under the L.Routing.itinerary section. 
 
-#### Step 4: Add waypoints by clicking on the map
+#### Step 4: Add a geocoder so you can add waypoints by searching for an address or location
+Routing software is only able to look up routes between coordinate pairs. Thus, if users want to find routes between addresses or other locations described as a string of text, we need a geocoder that can turn that address string into a coordinate pair. For this, we add a geocoding service as a plugin to extend our Leaflet Routing Machine plugin. It’s plugins on plugins, y’all! 
+
+The person who developed Leaflet Routing Machine also developed a Leaflet geocoder plugin that can be easily combined with the routing machine. It is called Leaflet Control Geocoder, and it can be used with many different geocoding services, such as [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim), [Bing Locations API](https://docs.microsoft.com/en-us/bingmaps/rest-services/locations/), [Google Geolocating API](https://developers.google.com/maps/documentation/geocoding/start), or [Mapbox Geocoding API](https://docs.mapbox.com/api/search/), among others. Since we're using Mapbox for directions, let's also use its geocoding service. 
+
+To include the geocoder plugin, we first need to add links to its CSS and JS files in our index.html page. We’ll use unpkg again, though we could also download and store these locally. Add the following links to your index.html. I recommend keeping all your CSS files together and all your JS files together: 
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+```
+Next, we initialize the plugin by adding the control to a map instance. As an option when you initialize the routing control, add the following line of code, adding your mapbox access token where requested:
+```javascript
+  geocoder: L.Control.Geocoder.mapbox('yourAccessTokenGoesHere'),
+```
+Test this out. Your routing control should now include text boxes where you can search for locations that are geocoded and available for routing. Note that there are again options that you can change to modify the geocoder's behavior. Find the list of these options in the documentation here: https://github.com/perliedman/leaflet-control-geocoder#api.
+
+#### Step 5: Add waypoints by clicking on the map
 By default, the Leaflet Routing Machine does not allow a user to add waypoints by clicking on the map. However, this could be a useful functionality. Let’s add it. We’ll do this by creating a popup when the map is clicked that gives buttons for ‘start from this location’ or ‘go to this location’, then add some functions for when those buttons are clicked to get the route. In your scripts.js file, add the following: 
 ```javascript
 function createButton(label, container) {
@@ -139,3 +156,28 @@ Save and test. Your startBtn should now do something, but your destBtn won’t y
     });
  ```
 Observe that after this section of code modifies the array of `waypoints` in the `control` variable, it also uses a method called `control.show()` to expand the control from its initial collapsed position. After each button is clicked, the function also closes the popup. 
+
+Now that you’ve added the ability to get waypoints by clicking on the map, let’s get rid of the initial waypoints. In the part of your code where you initialize your routing control, comment out the starting waypoints and add the value null instead. Your code should look like this: 
+```javascript
+waypoints: [
+            null
+              //L.latLng(47.246587, -122.438830),
+              //L.latLng(47.258024, -122.444725),
+              //L.latLng(47.318017, -122.542970)
+          ],
+```
+Save and test. Is the ability to click on the map to create waypoints sufficiently discoverable? I don’t think it is. Make some changes to your map to make it more so. There are many ways to do this—you could create an overlay on your Leaflet map with instructions, set an initial starting waypoint with a popup that tells the user to click the map to change its location, etc. Come up with some way of improving the discoverability of your map, and explain the change you made in your write up. 
+
+#### Step 6: add geolocation
+Based on what you’ve learned in last lab and this lab, add functionality that will enable the user to zoom to their current location in case they want to use it as one of their waypoints. This will require using the map.locate function, which is built into Leaflet. I also recommend using the [EasyButton plugin](https://github.com/CliffCloud/Leaflet.EasyButton) to add your button, though it is not required. 
+
+#### Step 7: host your map on GitHub pages or your UW server space
+Your final output for this part of the lab should be a Leaflet map with the following features/functionalities:
+-Draggable markers
+-Units in miles
+-collapsable control that is hidden on initial map load
+-Geocoder to enable searching for locations
+-Clickable buttons to create waypoints 
+-Some modification that makes clickable functionality more discoverable
+-The ability to use current location as a waypoint
+Please host your map on GitHub, enable GitHub Pages for the repository, and include a link to its location in your lab write-up. 
