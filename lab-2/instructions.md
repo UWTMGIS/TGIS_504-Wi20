@@ -87,3 +87,14 @@ router: L.Routing.mapbox('your-access-token-here'),
 ```
 Insert your access token where requested, save, and open in Chrome. View the console in Developer Tools and you should no longer see the OSRM warning. Mapbox Directions API limits your free usage to 50,000 geolocation requests per month. The limit is more than sufficient for our purposes, but if you were to use this in a commercial product, you might exceed this and either pay for more usage or use a different routing service. 
 
+There are various options built in to the Routing control that we can change to modify the application. Find a full list of these options in the plugin's documentation here: http://www.liedman.net/leaflet-routing-machine/api/ Note that the L.Routing.control class extends the L.Routing.interface class, so any of the options available under L.Routing.interface can also be used when we intialize L.Routing.control. Let's use a couple of these. 
+
+First, change the units from metric to imperial by adding the following key-value pair as an option when you intialize the control: 
+```javascript
+units:'imperial',
+```
+
+Next, let's make the control collapsible, since this will allow the user to maximize screen real estate for the map itself. Add this option: 
+```javascript
+    collapsible: true,
+```
