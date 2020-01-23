@@ -118,18 +118,24 @@ map.on('click', function(e) {
     L.popup()
         .setContent(container)
         .setLatLng(e.latlng)
-        .openOn(map);
-
-    L.DomEvent.on(startBtn, 'click', function() {
-        control.spliceWaypoints(0, 1, e.latlng);
-        map.closePopup();
+        .openOn(map);  
+ });
  ```
 This code uses functionality built into JavaScript itself and into Leaflet itself to build a little user interface. When the map is clicked, the code creates a popup that contains two buttons, one called `startBtn` and one called `destBtn`. Save your work and test this out. Clicking the map produces the popup with buttons, but if you click the buttons, nothing happens. Let’s change that. 
 
 When the “Start from this location” button is clicked, the first waypoint of the route should be replaced with the location that the user clicked on. Modifying the waypoints can be done with the method spliceWaypoints, which mimics the behavior of [JavaScript’s Array.splice](https://www.w3schools.com/jsref/jsref_splice.asp). To replace the first waypoint, you tell Leaflet Routing Machine to remove one waypoint at index 0 (the first), and then add a new at the clicked location. Add this code inside the map’s click event handler; e will refer to the click event, and e.latlng is the location clicked:
 ```javascript
-          L.DomEvent.on(startBtn, 'click', function() {
-              control.spliceWaypoints(0, 1, e.latlng);
-              map.closePopup();
-          });
+    L.DomEvent.on(startBtn, 'click', function() {
+        control.spliceWaypoints(0, 1, e.latlng);
+        map.closePopup();
+    });
 ```
+Save and test. Your startBtn should now do something, but your destBtn won’t yet. Add another section of code inside the map's click event handler to add functionality to that button:
+```javascript
+    L.DomEvent.on(destBtn, 'click', function() {
+        control.spliceWaypoints(control.getWaypoints().length - 1, 1, e.latlng);
+        control.show();
+        map.closePopup();
+    });
+ ```
+Observe that after this section of code modifies the array of `waypoints` in the `control` variable, it also uses a method called `control.show()` to expand the control from its initial collapsed position. After each button is clicked, the function also closes the popup. 
