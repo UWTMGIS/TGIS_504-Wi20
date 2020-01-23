@@ -96,5 +96,40 @@ units:'imperial',
 
 Next, let's make the control collapsible, since this will allow the user to maximize screen real estate for the map itself. Add this option: 
 ```javascript
-    collapsible: true,
+collapsible: true,
+```
+Now, review the documentation to figure out how you can set the control to be collapsed (not showing) when the map first loads and edit your code to achieve this. Hint: this is a boolean option available under the L.Routing.itinerary section. 
+
+#### Step 4: Add waypoints by clicking on the map
+By default, the Leaflet Routing Machine does not allow a user to add waypoints by clicking on the map. However, this could be a useful functionality. Let’s add it. We’ll do this by creating a popup when the map is clicked that gives buttons for ‘start from this location’ or ‘go to this location’, then add some functions for when those buttons are clicked to get the route. In your scripts.js file, add the following: 
+```javascript
+function createButton(label, container) {
+    var btn = L.DomUtil.create('button', '', container);
+    btn.setAttribute('type', 'button');
+    btn.innerHTML = label;
+    return btn;
+}
+
+map.on('click', function(e) {
+    var container = L.DomUtil.create('div'),
+        startBtn = createButton('Start from this location', container),
+        destBtn = createButton('Go to this location', container);
+
+    L.popup()
+        .setContent(container)
+        .setLatLng(e.latlng)
+        .openOn(map);
+
+    L.DomEvent.on(startBtn, 'click', function() {
+        control.spliceWaypoints(0, 1, e.latlng);
+        map.closePopup();
+ ```
+This code uses functionality built into JavaScript itself and into Leaflet itself to build a little user interface. When the map is clicked, the code creates a popup that contains two buttons, one called `startBtn` and one called `destBtn`. Save your work and test this out. Clicking the map produces the popup with buttons, but if you click the buttons, nothing happens. Let’s change that. 
+
+When the “Start from this location” button is clicked, the first waypoint of the route should be replaced with the location that the user clicked on. Modifying the waypoints can be done with the method spliceWaypoints, which mimics the behavior of [JavaScript’s Array.splice](https://www.w3schools.com/jsref/jsref_splice.asp). To replace the first waypoint, you tell Leaflet Routing Machine to remove one waypoint at index 0 (the first), and then add a new at the clicked location. Add this code inside the map’s click event handler; e will refer to the click event, and e.latlng is the location clicked:
+```javascript
+          L.DomEvent.on(startBtn, 'click', function() {
+              control.spliceWaypoints(0, 1, e.latlng);
+              map.closePopup();
+          });
 ```
