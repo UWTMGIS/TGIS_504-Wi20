@@ -171,7 +171,7 @@ Save and test. Is the ability to click on the map to create waypoints sufficient
 #### Step 6: add geolocation
 Based on what you’ve learned in last lab and this lab, add functionality that will enable the user to zoom to their current location in case they want to use it as one of their waypoints. This will require using the map.locate function, which is built into Leaflet. I also recommend using the [EasyButton plugin](https://github.com/CliffCloud/Leaflet.EasyButton) to add your button, though it is not required. 
 
-#### Step 7: host your map on GitHub pages or your UW server space
+#### Step 7: host your map online
 Your final output for this part of the lab should be a Leaflet map with the following features/functionalities:
 -Draggable markers
 -Units in miles
@@ -180,4 +180,37 @@ Your final output for this part of the lab should be a Leaflet map with the foll
 -Clickable buttons to create waypoints 
 -Some modification that makes clickable functionality more discoverable
 -The ability to use current location as a waypoint
-Please host your map on GitHub, enable GitHub Pages for the repository, and include a link to its location in your lab write-up. 
+Please host your map on GitHub Pages or your UW server space and include a link to its location in your lab write-up. 
+
+### Part 3: Evaluating and critiquing mobile friendliness
+Though Leaflet Routing Machine is a fairly good plugin, one major disadvantage is that the CSS file its maintainer makes available is not optimized for mobile browsing. In fact, let’s test this. Go view the map you made in Part 2 on your mobile device. Not great. In your browser, open up the leaflet-routing-machine.css file at its location on unpkg.com: https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css. Notice that widths, heights, and font sizes are defined in pixels rather than in relative units like percents or ems and that there is very little attempt to implement responsive design. 
+
+I won’t ask you to rebuild this CSS file to make it mobile-friendly, but thinking back to the unit on responsive design and design conventions for mobile maps, please write a paragraph in your lab-write up that includes five specific suggestions for how you would modify the CSS to make Leaflet Routing Machine mobile-friendly. 
+
+### Deliverables
+**Part 1**: Answer the following questions about three different routing plugins that can work with Leaflet.
+1.	Title and maintainer of plugin 1: 
+2.	What are the main functionalities of the plugin? 
+3.	When was the last commit pushed to the GitHub repo where the plugin can be downloaded? 
+4.	Do the developers provide a working demo of the plugin?
+5.	Based on the above information, how would you rank this in relation to the other two plugins you chose in terms of overall quality and usability? Justify your ranking. 
+
+1.	Title and maintainer of plugin 2: 
+2.	What are the main functionalities of the plugin? 
+3.	When was the last commit pushed to the GitHub repo where the plugin can be downloaded? 
+4.	Do the developers provide a working demo of the plugin?
+5.	Based on the above information, how would you rank this in relation to the other two plugins you chose in terms of overall quality and usability? Justify your ranking
+
+1.	Title and maintainer of plugin 3: 
+2.	What are the main functionalities of the plugin? 
+3.	When was the last commit pushed to the GitHub repo where the plugin can be downloaded? 
+4.	Do the developers provide a working demo of the plugin?
+5.	Based on the above information, how would you rank this in relation to the other two plugins you chose in terms of overall quality and usability? Justify your ranking
+
+**Part 2**: 
+-Include a link to the URL of the map you built in Part 2
+-Explain how you modified your map to improve the discoverability of the waypoint creating affordance.
+
+**Part 3**: 
+Drawing on the unit on responsive design and design conventions for mobile maps (Week 2), write a paragraph that includes five specific suggestions for how you would modify the CSS to make Leaflet Routing Machine mobile-friendly.
+
