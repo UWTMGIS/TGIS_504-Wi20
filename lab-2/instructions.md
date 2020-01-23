@@ -61,4 +61,15 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/256/{z}/{x}/{y}?access_
     accessToken: 'yourAccessTokenGoesHere',
 }).addTo(map);
 ```
-You should now have an HTML page that loads a Leaflet map centered on the South Sound. 
+You should now have an HTML page that loads a Leaflet map centered on the South Sound. Next let's add links to the CSS and JS files we need in order to initialize the routing plugin. In the 'Getting Started' section of the [Leaflet Routing Machine homepage](http://www.liedman.net/leaflet-routing-machine), you can find links to where the necessary CSS and JS files are accessible via unpkg.com. Copy those links into the `<head>` of your index. 
+
+Then, under the section of code that intiliazes your map in your scripts.js file, add the following code to initialize the routing plugin:
+```javascript
+      var control = L.Routing.control({
+          waypoints: [
+              L.latLng(47.246587, -122.438830),
+              L.latLng(47.318017, -122.542970)
+          ],
+      }).addTo(map);
+```
+Save your work and preview in a browser. You should see a map with markers at either end of a route and directions from Pinkerton Hall to Point Defiance. Try adding a third point at latitude and longitude 47.258024,  -122.444725. Aha, now you can get baked goods at Corina Bakery on the way to the park.
