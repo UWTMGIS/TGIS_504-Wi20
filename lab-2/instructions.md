@@ -181,7 +181,7 @@ Your final output for this part of the lab should be a Leaflet map with the foll
 * Geocoder to enable searching for locations
 * Clickable buttons to create waypoints 
 * Some modification that makes clickable functionality more discoverable
-* The ability to use current location as a waypoint
+* The ability to zoom to current location 
 
 Please host your map on GitHub Pages or your UW server space and include a link to its location in your lab write-up. 
 
