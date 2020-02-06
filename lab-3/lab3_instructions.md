@@ -149,7 +149,7 @@ Once you have built your map and customized it appropriately, follow the instruc
 
 ### Part 6: Brief reflective essay
 
-**Please answer the following questions: **
+**Please answer the following questions:**
 
 1. In this lab you used ArcMap, Esri Online, browser based Survey123, and Collector. As the developer, how did you find working within ArcGIS to build these data collection tools? Please include a description of the process of building the form, the geodatabase, and the online map. How easy or difficult was the process? How much time did the various steps take? This should be a ~2 paragraph narrative to reflect on the process. I encourage you to use vocabulary about design and evaluation that we've used in class and in readings.
 
