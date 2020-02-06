@@ -10,13 +10,12 @@ For the next two lab assignments, you are to identify a problem in which mobile 
 For agencies that have a well-established workflow in which ArcGIS is already integrated, Collector and Survey123 for ArcGIS are popular choices for data collection from field crews. Some of you have likely used these applications before in one form or another.
 
 The general steps involved in this lab are as follows:
-
-·     Identify a data collection problem for which a mobile app could be useful 
-·     Plan data to be collected and the form to collect it in
-·     Build a form-centric data collection survey using Survey123 online
-·     Build a geodatabase and feature class(es) for your Collector app
-·     Build and share a map to be used in the Collector app
-·     Brief reflective essay
+* Identify a data collection problem for which a mobile app could be useful 
+* Plan data to be collected and the form to collect it in
+* Build a form-centric data collection survey using Survey123 online
+* Build a geodatabase and feature class(es) for your Collector app
+* Build and share a map to be used in the Collector app
+* Brief reflective essay
 
 ***An important note:*** *Esri has recently released a new version of Collector; however, it is currently only available on iPhone and not Android. Therefore, we will be using Collector for ArcGIS **(Classic).** If you have an iPhone and wish to use the latest version, you may do so, but note that the instructions here are written for Classic.*
 
