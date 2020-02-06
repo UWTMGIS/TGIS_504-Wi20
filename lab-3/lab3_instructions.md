@@ -154,7 +154,7 @@ Once you have built your map and customized it appropriately, follow the instruc
 1. In this lab you used ArcMap, Esri Online, browser based Survey123, and Collector. As the developer, how did you find working within ArcGIS to build these data collection tools? Please include a description of the process of building the form, the geodatabase, and the online map. How easy or difficult was the process? How much time did the various steps take? This should be a ~2 paragraph narrative to reflect on the process. I encourage you to use vocabulary about design and evaluation that we've used in class and in readings.
 
 2. What was something you wish you could have done with either Collector or Survey123 that you were unable to do? Elaborate.
-3. Reflecting on the data collection problem you set out to solve, do you think a form-centric or map-centric approach is better for your scenario? Please elaborate and explain why.
+3. Reflecting on the data collection problem you set out to solve, do you think a form-centric or map-centric approach is better for your scenario? Please elaborate and explain why, referencing differences in user experience between the two tools as necesssary. 
 4. Does your form introduce any risks associated with inclusion in the dataset or exclusion from the dataset? Justify your answer and explain any steps you might take to mitigate those risks. 
 
 ### Deliverables
