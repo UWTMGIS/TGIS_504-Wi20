@@ -45,7 +45,7 @@ The first ODK tool we’ll be using is Build, which is a web-based interface and
 
 Visit https://build.opendatakit.org/ and follow the prompts to create an account. When you've logged in, your screen should look something like this: 
 
-![](H:\Courses\TGIS_504_MobileDev\2020Winter\labs\lab4\images\screen-1-build.png)
+![](images\screen-1-build.png)
 
 You can click the form title to edit it or add new question fields with the menu that runs along the bottom. For your first form, you'll recreate the public art survey I made for the week 6 reading response activity:
 
@@ -53,7 +53,7 @@ You can click the form title to edit it or add new question fields with the menu
 
 * Add a new _Text_ field. Notice that a menu opens on the right side of the screen, allowing you to modify the attributes associated with the field. The 'Data Name' is what ArcGIS would call the field name; don't use spaces in this. For your first question, set this to "title". The 'Label' is what your user will see; set this to "Provide a title for the artwork". Always make the text in this field understandable for your user. The 'Hint' and 'Default Value' properties are optional. You can include a hint for questions that are less self-explanatory or provide a default value if you want an answer two auto-fill. Click on each of the remaining properties for more information about these options. 
 
-  ![text-question-build](H:\Courses\TGIS_504_MobileDev\2020Winter\labs\lab4\images\text-question-build.JPG)
+  ![text-question-build](images\text-question-build.JPG)
 
 * Add a _Choose One_ field for the artwork's medium and give it an appropriate Data Name and Label. Make four options called Sculpture, Architecture, Painting or Mural, and Other. Note that the 'English' field is what will be visible to the user while the 'Underlying Value' field is how the data will be formally categorized in the database. No spaces in the underlying value field. 
 
@@ -90,7 +90,7 @@ Excel makes a good environment for editing XLSForm documents because it is human
 
 * If your form has any issues, you will get an error warning that will give you information about what to fix (such as a failure to include label text or some kind of syntax error). If the conversion is successful, you should see the following message: 
 
-  ![xlsforms-online](H:\Courses\TGIS_504_MobileDev\2020Winter\labs\lab4\images\xlsforms-online.png)
+  ![xlsforms-online](images\xlsforms-online.png)
 
 * Click the 'Preview in Enketo' button. Enketo is an ODK tool that can style and display any form written in XML. You should be able to preview your form. If you notice any errors, correct them in Excel and reconvert your form to XML. 
 
@@ -105,8 +105,8 @@ Now that you’ve gotten familiar with how to manipulate your data form with XLS
 3. Let’s say you’ve designed a form to use when surveying households that would like to foster rescue cats. Your organization allows each household to foster up to three cats at once, but no more. One of your questions asks how many cats the potential hosts would like to foster, and you need to set the possible responses to be no more than 3. How would you set up this constraint in the Survey form sheet in Excel? Fill in the chart below to establish this constraint: 
 
 | type | name | label | constraint |
-| ---- | ---- | ----- | ---------- |
-|      |      |       |            |
+| --------- | --------- | ---------- | ---------- |
+|       |       |       |            |
 
 ### Part 2: Building your own form
 
@@ -196,7 +196,7 @@ In this step, you'll connect ODK Collect to the form you have stored on your Agg
 
 * Fill in the form with sample information, entering data for every field in your questionnaire. After answering each question, click the icon that looks like an arrow pointing at a dot to advance to the next question:
 
-  <img src="H:\Courses\TGIS_504_MobileDev\2020Winter\labs\lab4\images\collect-ex2.jpg" alt="collect-ex " />
+  <img src="images\collect-ex2.jpg" alt="collect-ex " />
 
 * Note that collecting GPS data with ODK Collect (if your location field requires GPS location rather than manual location entry and you're using a GPS-enabled device) can take a moment. When you’ve selected your point, line or polygon’s location, click the ‘save’ icon, then continue to the next question. 
 
