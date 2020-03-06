@@ -189,6 +189,7 @@ In the same webpage as you put the first chart, add a second, this time a bar ch
 ![screenshot of bar chart](images/bar-chart.JPG)
 
 * In a paragraph tag in the html, provide a short bit of explanatory text explaining and interpreting the chart for your users. What do you think accounts for the different fatality rates among these countries? Is the disease really more deadly in the United States than it is in South Korea? See this brief article in *The Atlantic* for context: https://www.theatlantic.com/technology/archive/2020/03/how-many-americans-really-have-coronavirus/607348/
+* Host the webpage that contains the two charts you made in Part 1 and Part 2 on Github or your UW server space and submit a link to the page with your lab deliverables. 
 
 ### Part 3: Creating charts with your own data
 
