@@ -149,7 +149,7 @@ View your changes again. You should see a blue line, labeled Africa with no fill
 
 Change the colors of each of the newly added lines by giving the ```borderColor``` keys new hexidecimal color values. You can use any colors you choose, or use these: `#8e5ea2`, `#3cba9f`, `#e8c3b9`, `#c45850 `, `#ff8c00`. Your final graph should look something like this, with built-in tool-tip functionality and responsiveness that you can check by adjusting the size of your web browser. 
 
-{***Add image***}
+![screenshot of line chart](images/line-chart.JPG)
 
 ### Part 2: Building a Bar Chart
 
@@ -186,7 +186,7 @@ In the same webpage as you put the first chart, add a second, this time a bar ch
 
 * Your chart should now look something like this: 
 
-  {***insert image***}
+![screenshot of bar chart](images/bar-char.JPG)
 
 * In a paragraph tag in the html, provide a short bit of explanatory text explaining and interpreting the chart for your users. What do you think accounts for the different fatality rates among these countries? Is the disease really more deadly in the United States than it is in South Korea? See this brief article in *The Atlantic* for context: https://www.theatlantic.com/technology/archive/2020/03/how-many-americans-really-have-coronavirus/607348/
 
