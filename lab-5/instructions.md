@@ -186,7 +186,7 @@ In the same webpage as you put the first chart, add a second, this time a bar ch
 
 * Your chart should now look something like this: 
 
-![screenshot of bar chart](images/bar-char.JPG)
+![screenshot of bar chart](images/bar-chart.JPG)
 
 * In a paragraph tag in the html, provide a short bit of explanatory text explaining and interpreting the chart for your users. What do you think accounts for the different fatality rates among these countries? Is the disease really more deadly in the United States than it is in South Korea? See this brief article in *The Atlantic* for context: https://www.theatlantic.com/technology/archive/2020/03/how-many-americans-really-have-coronavirus/607348/
 
