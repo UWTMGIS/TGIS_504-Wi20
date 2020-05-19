@@ -1,6 +1,6 @@
-# Lab 5: Charts and graphs with JavaScript
+# Lab 4, part 1: Charts and graphs with JavaScript
 
-## TGIS 504, Winter 2020, Dr. Emma Slager
+## ~~TGIS 504, Winter 2020~~ TGIS 506, Spring 2020, Dr. Emma Slager
 
 #### Introduction
 
