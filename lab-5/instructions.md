@@ -153,7 +153,7 @@ Change the colors of each of the newly added lines by giving the ```borderColor`
 
 ### Part 2: Building a Bar Chart
 
-In the same webpage as you put the first chart, add a second, this time a bar chart. This chart will be of COVID-19 fatality rates, as reported on March 4, 2020. Follow the steps below, applying what you learned in Part 1 as necessary. You may find the following example of a basic chart.js bar chart useful as you proceed: https://tobiasahlin.com/blog/chartjs-charts-to-get-you-started/#1-bar-chart
+In the same webpage as you put the first chart, add a second, this time a bar chart. This chart will be of Pokemon types, and the data comes from this data set: https://www.kaggle.com/abcsds/pokemon/data. Follow the steps below, applying what you learned in Part 1 as necessary. You may find the following example of a basic chart.js bar chart useful as you proceed: https://tobiasahlin.com/blog/chartjs-charts-to-get-you-started/#1-bar-chart
 
 * In the "wrapper" div on the html page, add a second chart title, subtitle, and canvas. Create an appropriate ID for the canvas and use the same height and width as you used for the first chart. 
 
@@ -186,9 +186,9 @@ In the same webpage as you put the first chart, add a second, this time a bar ch
 
 * Your chart should now look something like this: 
 
-![screenshot of bar chart](images/bar-chart.JPG)
+![screenshot of bar chart](images/barchart2.png)
 
-* In a paragraph tag in the html, provide a short bit of explanatory text explaining and interpreting the chart for your users. What do you think accounts for the different fatality rates among these countries? Is the disease really more deadly in the United States than it is in South Korea? See this brief article in *The Atlantic* for context: https://www.theatlantic.com/technology/archive/2020/03/how-many-americans-really-have-coronavirus/607348/
+* In a paragraph tag in the html, provide a short bit of explanatory text explaining and interpreting the chart for your users. (I'm not particularly knowledgeable about Pokemon, but if you need a brief explainer about types, you can find one here: https://bulbapedia.bulbagarden.net/wiki/Type#Type_chart)
 * Host the webpage that contains the two charts you made in Part 1 and Part 2 on Github or your UW server space and submit a link to the page with your lab deliverables. 
 
 ### Part 3: Creating charts with your own data
